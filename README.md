@@ -8,3 +8,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Responsive table
 Navigate to `http://localhost:4200/display-media` to visualize the responsive table with data retrieved from API.
+
+To see the table populated you must use the function MediaService.retrieveDataTest() instead of MediaService.retrieveData() inside DisplayMediaComponent.
