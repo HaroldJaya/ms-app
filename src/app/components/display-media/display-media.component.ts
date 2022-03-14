@@ -17,7 +17,7 @@ export class DisplayMediaComponent implements OnInit, OnDestroy {
   lastSuccessfullCall: number = 0;
   elementsPerPage: number = ELEMENTS_PER_PAGE;
   maxPage: number = 0;
-  currentPage: number = 1;
+  currentPage: number = 0;
   firstTimeout: number = 0;
   @ViewChild("search") searchBar!: ElementRef;
 
@@ -37,7 +37,7 @@ export class DisplayMediaComponent implements OnInit, OnDestroy {
     let firstTimeout = lastCallDate == null ? 0 : parseInt(lastCallDate) + POLLING_TIME - Date.now();
     if (firstTimeout > 0) {
       console.log("firstTimeout: ", firstTimeout)
-      console.log("firstTimeout: ", lastCallDate);
+      console.log("lastCallDate: ", lastCallDate);
       this.lastSuccessfullCall = lastCallDate == null ? 0 : parseInt(lastCallDate);
       let storedData = sessionStorage.getItem(DATA_KEY);
       this.model = !storedData ? [] : JSON.parse(storedData);
