@@ -1,0 +1,12 @@
+.arrows:active{
+  background-color: red;
+  color: white;
+  border-radius: 2px;
+}
+.container{
+  padding: 10px;
+}
+.separator{
+  margin-right: 10px;
+  margin-left: 10px;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="search-container">
+        Search by title: <input #search type="text" (keyup)="filterDisplayedData($event)">
+    </div>
+    <div class="info-container" *ngIf="lastSuccessfullCall">Last successfull call at: {{ lastSuccessfullCall | date: 'MMM d, y, hh:mm:ss'}}</div>
+    <div class="info-container" *ngIf="model.length == 0">No data available at the moment</div>
+    <table>
+        <thead>
+            <th class="item">TITLE</th>
+            <th class="item">CONTENT TYPE</th>
+            <th class="item hide-mobile">CREATION DATE</th>
+            <th class="item hide-mobile">DELIVERY STATUS</th>
+            <th class="item hide-mobile">LIVE STATUS ON AIR</th>
+            <th class="item hide-mobile">ON DEMAND DURATION</th>
+        </thead>
+        <tbody>
+            <tr class="row" *ngFor="let mediaElement of paginateData()">
+                <td class="item title">{{mediaElement.title}}</td>
+                <td class="item simple-value">{{mediaElement.contentType}}</td>
+                <td class="item hide-mobile">{{mediaElement.creationDate}}</td>
+                <td class="item simple-value hide-mobile">{{mediaElement.deliveryStatus}}</td>
+                <td class="item simple-value hide-mobile">{{mediaElement.liveStatusOnAir}}</td>
+                <td class="item hide-mobile">{{mediaElement.onDemandDuration}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <div class="paginator-container">
+        <app-paginator [totalElements]="displayedData.length" [(current)]="currentPage" [maxPage]="maxPage"></app-paginator>
+    </div>
+</div>
+

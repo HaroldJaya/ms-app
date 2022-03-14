@@ -1,0 +1,58 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: solid 1px rgb(222, 226, 230);
+    overflow: hidden;
+}
+
+tr:nth-child(even) {background: rgb(222, 226, 230)}
+
+thead{
+    background-color: rgb(236, 30, 44);
+    text-align: center;
+    color: rgb(26, 21, 21);
+}
+.search-container{
+    padding: 10px;
+}
+.info-container{
+    padding: 10px;
+}
+.item {
+    width: 16%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+.title {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.simple-value {
+    text-align: center;
+}
+th{
+    padding-top: 10px;
+    white-space:normal !important;
+    padding-bottom: 10px;
+}
+.paginator-container{
+    display: flex;
+    flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+    .hide-mobile{
+        display: none;
+    }
+    .container{
+        width: 100%;
+    }
+}
